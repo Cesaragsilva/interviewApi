@@ -1,5 +1,4 @@
 ﻿using Interview.Application.InputModels.Validations;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Interview.Application.InputModels
@@ -34,5 +33,6 @@ namespace Interview.Application.InputModels
         public int Id { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
+        public bool SlotWithMoreThanOneHour() => (End - Start).TotalHours > 1;
     }
 }

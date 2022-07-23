@@ -29,6 +29,16 @@ namespace Interview.Infrastructure.Persistence.Repository
             return await query.AsNoTracking().Where(c => c.Id == id).FirstOrDefaultAsync();
         }
 
+        public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> filter, params Expression<Func<T, object>>[] includes)
+        {
+            IQueryable<T> query = _interviewDbContext.Set<T>();
+
+            foreach (Expression<Func<T, object>> include in includes)
+                query = query.Include(include);
+
+            return await query.AsNoTracking().Where(filter).ToListAsync();
+        }
+
         public async Task<T> AddAsync(T entity)
         {
             entity.Created();

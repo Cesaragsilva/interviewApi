@@ -20,8 +20,9 @@
     public class AvailabilitySlotsViewModel
     {
         public AvailabilitySlotsViewModel() { }
-        public AvailabilitySlotsViewModel(DateTime start, DateTime end)
+        public AvailabilitySlotsViewModel(int id, DateTime start, DateTime end)
         {
+            Id = id;
             Start = start;
             End = end;
         }

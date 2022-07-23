@@ -22,6 +22,7 @@ namespace Interview.API.Configuration
             services.AddScoped<ICandidateServiceApplication, CandidateServiceApplication>();
             services.AddScoped<IInterviewerServiceApplication, InterviewerServiceApplication>();
             services.AddScoped<IScheduleSlotServiceApplication, ScheduleSlotServiceApplication>();
+            services.AddScoped<ICalendarServiceApplication, CalendarServiceApplication>();
             services.AddScoped<NotificationService>();
             return services;
         }

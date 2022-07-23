@@ -15,21 +15,14 @@ namespace Interview.Application.Services
         {
             slots.ForEach(slot =>
             {
-                TypeOfDay(slot);
+                CheckTotalOfHoursPerSlot(slot);
             });
             return _notificationService.Notifications.Any();
         }
-
-        private void TypeOfDay(AvailabilitySlotsInputModel slot)
+        private void CheckTotalOfHoursPerSlot(AvailabilitySlotsInputModel slot)
         {
-            if (WeekendDay(slot.Start)) AddNotification(slot.Start);
-            if (WeekendDay(slot.End)) AddNotification(slot.End);
+            if(slot.SlotWithMoreThanOneHour())
+                _notificationService.AddNotification($"Slot Start: {slot.Start} - End {slot.End} it can't be more than One Hour");
         }
-
-        private void AddNotification(DateTime slot) =>
-            _notificationService.AddNotification($"{slot} it's a weekend and it's not allowed");
-
-        private bool WeekendDay(DateTime date) =>
-            (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday);
     }
 }
