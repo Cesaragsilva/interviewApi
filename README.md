@@ -2,8 +2,6 @@
 
 I used the Clean Architecture and DDD for building this application. Follow bellow the packages used.
 
-- AutoMapper - Used for auto mapping Domain class to View Model class and Input Model Class to Domain 
-
 - EntityFrameworkCore - Used for building an in Memory Database (InMemory extension) and for access the data using ORM. I prefered to use Entity than Dapper because last versions of entity are more flexible and fast than dapper.
 
 - FluentValidation - Used for create validations of business and for implement the Notification Partner
