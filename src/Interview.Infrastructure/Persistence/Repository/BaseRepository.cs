@@ -41,7 +41,6 @@ namespace Interview.Infrastructure.Persistence.Repository
         {
             entity.Updated();
             _interviewDbContext.Entry(entity).State = EntityState.Modified;
-            _interviewDbContext.AddRange(entity);
             await _interviewDbContext.SaveChangesAsync();
             return entity;
         }
