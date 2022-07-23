@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+    interviewapi:
+        build:
+            context: .
+        container_name: interviewapi
+        restart: always
+        ports:
+            - 5142:80
+        environment: 
+            ASPNETCORE_ENVIRONMENT: Development
+        networks:
+            - lovys
+            
+networks:
+    lovys:
+        driver: bridge

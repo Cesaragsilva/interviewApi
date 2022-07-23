@@ -1,0 +1,18 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/Interview.API/bin/Debug/net6.0
+/src/.vs/Interview
+/src/Interview.API/obj
+/src/Interview.Application/bin/Debug/net6.0
+/src/Interview.Application/obj
+/src/Interview.Core/bin/Debug/net6.0
+/src/Interview.Core/obj
+/src/Interview.Infrastructure/bin/Debug/net6.0
+/src/Interview.Infrastructure/obj
+/src/Interview.Ioc/bin/Debug/net6.0
+/src/Interview.Ioc/obj
+/src/Interview.Tests/bin/Debug/net6.0
+/src/Interview.Tests/obj/Debug/net6.0
+/src/Interview.Tests/obj
