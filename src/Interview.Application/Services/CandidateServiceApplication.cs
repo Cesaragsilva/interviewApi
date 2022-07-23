@@ -24,8 +24,6 @@ namespace Interview.Application.Services
 
         public async Task<ResultService<AvailabilityViewModel>> AddCandidateAvailabilityAsync(CandidateInputModel candidate)
         {
-            if (candidate is null) return ResultService.Fail<AvailabilityViewModel>("Object can't be null");
-
             if (!candidate.Valid) return ResultService.RequestError<AvailabilityViewModel>(candidate.Notifications);
 
             if (_scheduleSlotServiceApplication.AllowedSlots(candidate.Availabilities))

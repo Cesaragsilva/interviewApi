@@ -5,7 +5,7 @@
         private const string ErrorMessage = "Error";
         private const string SuccessMessage = "Success";
         public bool IsSuccess { get; set; }
-        public string Message { get; private set; } = "Erros ocurred during validation";
+        public string Message { get; private set; } = "Validation Erros";
         public IReadOnlyCollection<string> Erros { get; set; }
 
         public static ResultService<T> RequestError<T>(IReadOnlyCollection<string> notifications)

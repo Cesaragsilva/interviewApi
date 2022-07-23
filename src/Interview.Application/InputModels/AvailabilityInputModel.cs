@@ -1,4 +1,6 @@
 ﻿using Interview.Application.InputModels.Validations;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Interview.Application.InputModels
 {
@@ -13,7 +15,10 @@ namespace Interview.Application.InputModels
         }
 
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
+        [MinLength(1)]
         public List<AvailabilitySlotsInputModel> Availabilities { get; set; }
         public bool Valid => new AvailabilityValidator().Validate(this).IsValid;
         public IReadOnlyList<string> Notifications => new AvailabilityValidator().Validate(this).Errors.Select(p => p.ErrorMessage).ToList();

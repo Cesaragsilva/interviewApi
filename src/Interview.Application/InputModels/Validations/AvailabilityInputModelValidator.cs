@@ -10,8 +10,8 @@ namespace Interview.Application.InputModels.Validations
                 .NotEmpty()
                 .WithMessage("{PropertyName} is required");
 
-            RuleFor(x => x.Availabilities.Count)
-                .GreaterThan(0)
+            RuleFor(x => x.Availabilities)
+                .NotNull()
                 .WithMessage("{PropertyName} is required");
 
             RuleForEach(x => x.Availabilities).SetValidator(new AvailabilitiesSlotsValidator());
